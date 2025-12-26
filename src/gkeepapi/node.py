@@ -930,9 +930,15 @@ class NodeCollaborators(Element):
             self._dirty = False
         self._collaborators = {}
         for collaborator in collaborators_raw:
-            self._collaborators[collaborator["email"]] = RoleValue(collaborator["role"])
+            email = collaborator.get("email")
+            if email is None:
+               continue
+            self._collaborators[email] = RoleValue(collaborator["role"])
         for collaborator in requests_raw:
-            self._collaborators[collaborator["email"]] = ShareRequestValue(
+            email = collaborator.get("email")
+            if email is None:
+               continue
+            self._collaborators[email] = ShareRequestValue(
                 collaborator["type"]
             )
 
