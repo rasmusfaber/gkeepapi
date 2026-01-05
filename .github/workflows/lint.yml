@@ -20,7 +20,7 @@ jobs:
         python -m pip install . --group dev
     - name: Lint with ruff
       run: |
-        ruff src
+        ruff lint src
     - name: Check format with black
       run: |
         black --check src
