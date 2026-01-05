@@ -707,7 +707,9 @@ class Keep:
         Raises:
             LoginException: If there was a problem logging in.
         """
-        logger.warning("'Keep.login' is deprecated. Please use 'Keep.authenticate' instead")
+        logger.warning(
+            "'Keep.login' is deprecated. Please use 'Keep.authenticate' instead"
+        )
         auth = APIAuth(self.OAUTH_SCOPES)
         if device_id is None:
             device_id = f"{get_mac():x}"
@@ -723,7 +725,9 @@ class Keep:
         sync: bool = True,
         device_id: str | None = None,
     ) -> None:
-        logger.warning("'Keep.resume' has been renamed to 'Keep.authenticate'. Please update your code")
+        logger.warning(
+            "'Keep.resume' has been renamed to 'Keep.authenticate'. Please update your code"
+        )
         self.authenticate(email, master_token, state, sync, device_id)
 
     def authenticate(
@@ -1025,7 +1029,7 @@ class Keep:
         """
         return list(self._labels.values())
 
-    def __UNSTABLE_API_uploadMedia(self, fh: IO)-> None:
+    def __UNSTABLE_API_uploadMedia(self, fh: IO) -> None:
         pass
 
     def getMediaLink(self, blob: _node.Blob) -> str:

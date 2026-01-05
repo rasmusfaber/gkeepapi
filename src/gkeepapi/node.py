@@ -932,15 +932,13 @@ class NodeCollaborators(Element):
         for collaborator in collaborators_raw:
             email = collaborator.get("email")
             if email is None:
-               continue
+                continue
             self._collaborators[email] = RoleValue(collaborator["role"])
         for collaborator in requests_raw:
             email = collaborator.get("email")
             if email is None:
-               continue
-            self._collaborators[email] = ShareRequestValue(
-                collaborator["type"]
-            )
+                continue
+            self._collaborators[email] = ShareRequestValue(collaborator["type"])
 
     def save(self, clean: bool = True) -> tuple[list, list]:
         """Save the collaborators container"""
