@@ -33,6 +33,8 @@ dependencies = [
 
 [tool.ruff]
 target-version = "py310"
+
+[tool.ruff.lint]
 select = [
   # https://beta.ruff.rs/docs/rules/
   "F",  # pyflakes
@@ -104,12 +106,11 @@ ignore = [
   "EM102",  # f-string-in-exception -- no thanks
   "PLR0913",  # too-many-arguments -- no thanks
   "D105",  # undocumented-magic-method -- no thanks
-  "ANN101",  # missing-type-self -- unnecessary
-  "ANN102",  # missing-type-cls -- unnecessary
   "UP031",  # use-format-specifiers -- no thanks
+  "COM812",  # -- conflict
 ]
 
-[tool.ruff.pydocstyle]
+[tool.ruff.lint.pydocstyle]
 convention = "google"
 
 [dependency-groups]

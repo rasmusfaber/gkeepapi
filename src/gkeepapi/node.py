@@ -1857,7 +1857,9 @@ class List(TopLevelNode):
         ]
 
     def sort_items(
-        self, key: Callable = attrgetter("text"), reverse: bool = False,
+        self,
+        key: Callable = attrgetter("text"),
+        reverse: bool = False,
     ) -> None:
         """Sort list items in place. By default, the items are alphabetized, but a custom function can be specified.
 
@@ -2135,14 +2137,16 @@ class NodeDrawingInfo(Element):
         self.drawing_id = raw["drawingId"]
         self.snapshot.load(raw["snapshotData"])
         self._snapshot_fingerprint = raw.get(
-            "snapshotFingerprint", self._snapshot_fingerprint,
+            "snapshotFingerprint",
+            self._snapshot_fingerprint,
         )
         self._thumbnail_generated_time = NodeTimestamps.str_to_dt(
             raw.get("thumbnailGeneratedTime"),
         )
         self._ink_hash = raw.get("inkHash", "")
         self._snapshot_proto_fprint = raw.get(
-            "snapshotProtoFprint", self._snapshot_proto_fprint,
+            "snapshotProtoFprint",
+            self._snapshot_proto_fprint,
         )
 
     def save(self, clean: bool = True) -> dict:  # noqa: D102

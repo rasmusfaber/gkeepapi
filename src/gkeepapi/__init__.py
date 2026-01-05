@@ -426,7 +426,10 @@ class RemindersAPI(API):
         }
 
     def create(
-        self, node_id: str, node_server_id: str, dtime: datetime.datetime,
+        self,
+        node_id: str,
+        node_server_id: str,
+        dtime: datetime.datetime,
     ) -> Any:  # noqa: ANN401
         """Create a new reminder.
 
@@ -474,7 +477,10 @@ class RemindersAPI(API):
         return self.send(url=self._base_url + "create", method="POST", json=params)
 
     def update_internal(
-        self, node_id: str, node_server_id: str, dtime: datetime.datetime,
+        self,
+        node_id: str,
+        node_server_id: str,
+        dtime: datetime.datetime,
     ) -> Any:  # noqa: ANN401
         """Update an existing reminder.
 
@@ -903,7 +909,9 @@ class Keep:
         )
 
     def createNote(
-        self, title: str | None = None, text: str | None = None,
+        self,
+        title: str | None = None,
+        text: str | None = None,
     ) -> _node.Node:
         """Create a new managed note. Any changes to the note will be uploaded when :py:meth:`sync` is called.
 
@@ -970,7 +978,9 @@ class Keep:
         return node
 
     def findLabel(
-        self, query: re.Pattern | str, create: bool = False,
+        self,
+        query: re.Pattern | str,
+        create: bool = False,
     ) -> _node.Label | None:
         """Find a label with the given name.
 
