@@ -23,8 +23,7 @@ classifiers = [
   "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-  "gpsoauth >= 1.1.0",
-  "future >= 0.16.0",
+  "gpsoauth >= 2.0.0",
 ]
 
 [project.urls]
